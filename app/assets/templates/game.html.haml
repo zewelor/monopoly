@@ -1,0 +1,21 @@
+%div.row(ng-if="!game")
+  %span(us-spinner)
+
+%div.game-content(ng-if="game")
+  %div.row
+    %table.table.table-condensed
+      %thead
+        %th
+          Name
+        %th
+          Cash
+      %tbody
+        %tr(ng-repeat="player in game.players" ng-class="{success: game.active_player_id == player.id}")
+          %td
+            {{ player.name }}
+          %td
+            {{ player.cash }}
+
+  %div.row.game-board
+    %div.col-md-2(ng-repeat="tile in game.board.tiles")
+      %ng-include(src="'gameTile.html'")

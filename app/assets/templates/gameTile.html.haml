@@ -1,0 +1,16 @@
+%div.thumbnail.game-tile
+  %div.row
+    %div.col-md-2
+      %span.badge
+        {{ tile.number }}
+    %div.col-md-10
+      {{ tile.type | uppercase }}
+  %div.row
+    %div.col-md-12
+      %ul.list-group(ng-show="tile.players.length")
+        %li.list-group-item(ng-repeat="player in tile.players")
+          {{ player.name }}
+  %div.row
+    %div.col-md-12
+      %span.house.glyphicon.glyphicon-home(ng-repeat="house in tile.data.houses" ng-class="house.color")
+

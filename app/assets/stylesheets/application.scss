@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.game-board {
+  .game-tile {
+    height: 150px;
+  }
+}
+
+span.house {
+  &.red {
+    color: red;
+  }
+  &.blue {
+    color: blue;
+  }
+}
